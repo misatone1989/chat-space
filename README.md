@@ -24,7 +24,7 @@ _has_many :messages
 _has_many :groups
 
 ##massegesテーブル
-||Column|Type|Options|
+|Column|Type|Options|
 |------|----|-------|
 |image|text||
 |text|text||
@@ -32,23 +32,23 @@ _has_many :groups
 |group_id|integer|null: false, foreign_key: true|
 ###Association
 _belongs_to: user
-_has_many: messages_groups
+_belpngs_to: group
 
 ##groupsテーブル
-||Column|Type|Options|
+|Column|Type|Options|
 |------|----|-------|
 |text|text|null: false, foreign_key: true|
 ###Association
-_has_many: messages_groups
-_has_many:massages, trough: :messages_groups
+_has_many: users_groups
+_has_many:users, trough: :users_groups
 
-##messages_groupsテーブル
+##users_groupsテーブル
 ||Column|Type|Options|
 |------|----|-------|
-|message_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ###Association
-_belongs_to: post
+_belongs_to: user
 _belongs_to: group
 
 
