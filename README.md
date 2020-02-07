@@ -43,7 +43,7 @@ _has_many: users_groups
 _has_many:users, trough: :users_groups
 
 ##users_groupsテーブル
-||Column|Type|Options|
+|Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
