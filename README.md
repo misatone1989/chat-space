@@ -20,8 +20,10 @@ Things you may want to cover:
 |password|string|null: false|
 |name|string|null: false|
 ###Association
-_has_many :messages
-_has_many :groups
+_has_many :messages, trough: :users_groups
+_has_many :groups, trough: :users_groups
+_has_many :users_groups
+
 
 ##massegesテーブル
 |Column|Type|Options|
@@ -37,10 +39,11 @@ _belpngs_to: group
 ##groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false, foreign_key: true|
+|group_name|text|null: false|
 ###Association
 _has_many: users_groups
 _has_many:users, trough: :users_groups
+_has_many:messages
 
 ##users_groupsテーブル
 |Column|Type|Options|
