@@ -39,7 +39,7 @@ _belpngs_to: group
 ##groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|text|null: false|
+|name|text|null: false|
 ###Association
 _has_many: users_groups
 _has_many:users, trough: :users_groups
