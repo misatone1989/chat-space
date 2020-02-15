@@ -1,0 +1,18 @@
+.side_bar
+  .side_bar__header
+    .side_bar__user__name__box
+      .side_bar__user__name
+        %p name
+      .side_bar__icon
+        = link_to "#", class:"side_bar__icon__btn side_bar__icon__btn__edit " do
+          = icon('fas', 'edit', class:"fa-edit")
+        = link_to "#", class:"side_bar__icon__btn side_bar__icon__btn__cog" do
+          = icon('fas', 'cog', class:"fa-cog")
+  .side_bar__contents
+    .side_bar__content
+      .side_bar__group__list
+        .side_bar__group__name
+          %p techcamp
+        .side_bar__alert
+          %p まだメッセージがありません
+    
