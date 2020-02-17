@@ -11,7 +11,7 @@
   .main_chat__message__list
     .main_chat__message__list__contents
       .main_chat__message__list__user__name
-        %p name
+        %p name 
       .main_chat__message__list__date
         %p 2019/11/20(Wed) 17:43:01
       .main_chat__message__list__message
@@ -30,11 +30,13 @@
         %p 2019/11/20(Wed) 17:43:01
       .main_chat__message__list__message
         %p おはよう！
-   
+
   .main_chat__message__form
-    .message__form
-      .main_chat__input__box
-      .main_chat__message__image
-    .message__send__btn
+    %form.main_chat__message__form__content
+      %input.main_chat__message__form__input__box__text{:placeholder => "type a message"}
+      %label{class: "main_chat__message__form__input__box__image"}
+        = icon('fas', 'image')
+        %input{type: "file",class: "main_chat__message__form__input__box__image__file"}
+    %input.main_chat__message__form__submit__btn{:type => "submit", :value => "Send" }
         
 
