@@ -68,7 +68,12 @@ $color-btn:#38AEF0;
       &__alert{
        font-size: 11px;
        margin-top: 5px;
+       margin-bottom: 40px;
       }
+    a{
+        text-decoration: none;
+        color: $color-font_w;
+    }
 }
 
 
