@@ -4,17 +4,20 @@
       .side_bar__user__name
         = current_user.name
       .side_bar__icon
-        = link_to "#", class:"side_bar__icon__btn side_bar__icon__btn__edit " do
+        = link_to new_group_path, class:"side_bar__icon__btn side_bar__icon__btn__edit " do
           = icon('fas', 'edit', class:"fa-edit")
         = link_to edit_user_path(current_user) ,class:"side_bar__icon__btn side_bar__icon__btn__cog" do
           = icon('fas', 'cog', class:"fa-cog")
   .side_bar__contents
     .side_bar__content
       .side_bar__group__list
-        .side_bar__group__name
-          %p techcamp
-        .side_bar__alert
-          %p まだメッセージがありません
+        - current_user.groups.each do |group|
+          .side_bar__group
+            = link_to '#' do
+              .side_bar__group__name
+                =group.name
+              .side_bar__alert
+                まだメッセージがありません
     .side_bar__content
       .side_bar__group__list
         .side_bar__group__name
