@@ -2,23 +2,21 @@
   .main_chat__group__info
     .main_chat__group__info__left__content
       .main_chat__group__info__group__name
-        %p test
+        = @group.name
       .main_chat__group__info__member__name
-        %p Member : name
+        - "Member : " 
     .main_chat__group__info__right__content
       = link_to '#' do
         Edit
 
-  .message__list
+  .main_chat__message__list
     = render @messages
 
-  .form
-    .form.main_chat__message__form__content
-      = form_for [@group, @message] do |f|
-        =f.text_field :content, class: 'main_chat__message__form__input__box__text', placeholder: 'type a message'
-      .form__input__box
-        = f.label :image, class: 'main_chat__message__form__input__box__image' do
-        = icon('fas', 'image')
-        = f .file_field :image, class: 'main_chat__message__form__input__box__image__file'
-      = f. submit 'Send', class: 'main_chat__message__form__submit__btn'
-        
+  .main_chat__message__footer
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'

@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 $color-side_bar__header: #253141;
@@ -88,22 +89,24 @@ $color-btn:#38AEF0;
         background-color: $color-main_header;   
         display: flex;
         justify-content: space-between;  
+        border-bottom: solid #eeeeee;
       }
       &__message{
           &__list{
-            border-top: solid #eeeeee;
             height: calc(100vh - 190px);
             background-color: $color-main_content;
           }
-          &__form{
-            position: bottom;
-            position: relative;
-            height: 90px;
-            background-color: $color-main_footer;
-            display: flex;
-            align-items: center;
-          }
-      }
+          &__footer{
+           position: relative;
+           position: bottom;
+           height: 90px;
+           background-color: $color-main_footer;
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           z-index: 1;
+           }
+        }
 }
 
 .main_chat__group__info{
@@ -166,38 +169,46 @@ $color-btn:#38AEF0;
     height: 50px;
   }
 }
-.main_chat__message__form{
-  &__content{
-    margin-left: 20px;
-    height: 50px;
+
+.form{
     line-height: 50px;
-    width: calc(100vw - 420px);
-    background-color: #ffffff;
-    position: relative;
+    position: absolute;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0 10px 0 10px;
-  }
-     &__input__box{
-      position: absolute;
-        &__text{
-          border: none;
-          outline: none;
+    z-index: 2;
+        &__message{
+        z-index: 3;
+        position: absolute;
+        height: 50px;
+        width: calc(100vw - 460px);
+        padding-left: 10px;
+        margin-left: 20px;
+        background-color: #ffffff;
+        border: none;
+        outline: none;
+        line-height: 50px;
         }
-        &__image{
-          color: black;
-            &__file{
-              display: none;
+        &__mask{
+            line-height: 50px;
+            position: absolute;
+            float: right;
+            color: black;
+            margin-left: calc(100vw - 480px);
+            z-index: 4;
+            &__image{
+                z-index: 5;
             }
         }
-    }
-    &__submit__btn{
-        margin-left: 15px;
-        margin-right: 40px;
-        height: 50px;
-        width: 100px;
-        background-color: $color-btn ;
-        color: $color-font_w;
-    }
+        &__submit{
+            position: relative;
+            margin-left: calc(100vw - 420px);
+            margin-right: 40px;
+            height: 50px;
+            width: 100px;
+            background-color: $color-btn ;
+            color: $color-font_w;
+        }
+}
+.hidden{
+ display: none;
 }
