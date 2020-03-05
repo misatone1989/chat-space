@@ -4,7 +4,8 @@
       .main_chat__group__info__group__name
         = @group.name
       .main_chat__group__info__member__name
-        - "Member : " 
+        - @group.group_users.each do |group_user|
+          = group_user.user.name
     .main_chat__group__info__right__content
       = link_to '#' do
         Edit
