@@ -4,10 +4,11 @@
       .main_chat__group__info__group__name
         = @group.name
       .main_chat__group__info__member__name
-        - @group.group_users.each do |group_user|
+        Member:
+        - @group.group_users.each do |group_user| 
           = group_user.user.name
     .main_chat__group__info__right__content
-      = link_to '#' do
+      = link_to edit_group_path(current_user) do
         Edit
 
   .main_chat__message__list
