@@ -95,6 +95,7 @@ $color-btn:#38AEF0;
           &__list{
             height: calc(100vh - 190px);
             background-color: $color-main_content;
+            overflow: scroll;
           }
           &__footer{
            position: relative;
@@ -166,7 +167,6 @@ $color-btn:#38AEF0;
     margin-top: 12px;
     font-size: 14px;
     color: #434A54;
-    height: 50px;
   }
 }
 
