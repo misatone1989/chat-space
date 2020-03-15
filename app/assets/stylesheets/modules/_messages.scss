@@ -57,7 +57,10 @@ $color-btn:#38AEF0;
                  }
                }
              }
-
+    &__contents{
+      overflow: scroll;
+      height: calc( 100vh - 100px);
+    }
     &__content{
       margin: 20px 20px 40px 20px;
     }
